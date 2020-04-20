@@ -7,7 +7,7 @@ const initialState = {
       id: 1,
       name: 'Ishan Manandhar',
       location: 'Kathmandu',
-      designation: 'Frontend Dev'
+      role: 'Frontend Dev'
     }
   ]
 }

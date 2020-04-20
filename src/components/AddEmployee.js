@@ -7,7 +7,7 @@ const AddEmployee = () => {
 
   const [name, setName] = useState('')
   const [location, setLocation] = useState('')
-  const [designation, setDesignation] = useState('')
+  const [role, setRole] = useState('')
   const history = useHistory()
   console.log(history)
   const { addEmployee, employees } = useContext(GlobalContext);
@@ -19,7 +19,7 @@ const AddEmployee = () => {
       id: employees.length + 1,
       name,
       location,
-      designation
+      role
     }
     history.push('/') // temporal solution for no persistent data
     addEmployee(newEmployee)
@@ -54,12 +54,12 @@ const AddEmployee = () => {
                 <div className="w-full  mb-5">
                     <label
                       className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      htmlFor="designation">
-                        Designation
+                      htmlFor="role">
+                        Role
                     </label>
                     <input
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-gray-600"
-                      value={designation} onChange={(e) => setDesignation(e.target.value)} type="text" placeholder="Enter designation" />
+                      value={role} onChange={(e) => setRole(e.target.value)} type="text" placeholder="Enter role" />
                 </div>
                 <div className="flex items-center justify-between">
                     <button

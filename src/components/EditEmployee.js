@@ -3,7 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
 const EditEmployee = (route) => {
-  const [selectedUser, setSelectedUser] = useState({ id: null, name: '', designation: '', location: '' });
+  const [selectedUser, setSelectedUser] = useState({ id: null, name: '', role: '', location: '' });
 
   const { employees, editEmployee } = useContext(GlobalContext);
   const currentUserId = route.match.params.id;
@@ -44,11 +44,11 @@ const EditEmployee = (route) => {
           </div>
           <div className="w-full  mb-5">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="designation">
-                Designation
+              htmlFor="role">
+                Role
             </label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline"
-            value={selectedUser.designation} onChange={(e) => handleOnChange('designation', e.target.value)} type="text" placeholder="Enter designation" />
+            value={selectedUser.role} onChange={(e) => handleOnChange('role', e.target.value)} type="text" placeholder="Enter role" />
           </div>
           <div className="flex items-center justify-between">
             <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
